@@ -1,34 +1,41 @@
 $(document).ready(init);
-var senate=[];
-var house=[];
-var president=[];
-getHouseAndSenate
+var _rep;
+function init(){
+    getHouseAndSenate();
+}
 
 // Add whether is incumbant or challenger
-function getRepInfo(response){
-    response=response;
+function displayHouseAndSenate(response){
+    _rep=response;
+
     var house=$("<div>").addClass("senate candidate");
     var senate=$("<div>").addClass("house candidate");
     senate.append($("<h2>").text("Senate"));
     house.append($("<h2>").text("House"));
 
     var senate=$("<div>").attr("id","senate");
-    senate.addClass("container");
-    var house=$("<div>").attr("id","senate");
+    senate.addClass("container ");
+    var house=$("<div>").attr("id","house");
     house.addClass("container");
-    $("body").append(senate);
-    $("body").append(house);
+    house.append($("h3")).text("House");
+    senate.append($("h3")).text("Senate");
         
     for (candidate of response.results){
         var name=titleCase(candidate.name);
         var party=titleCase(candidate.party_full);
         var election=titleCase(candidate.office_full);
+        status=candidate.incumbent_challenge_full.toLowerCase();
         if(candidate.office_full.toUpperCase()==="HOUSE")
-            house.append($("<div>").text(name+" is a member of the "+party+" running for "+election));
+        {
+            house.append($("<div>").text(name+" is a member of the "+party).addClass(status));
+        }
         else
-            senate.append($("<div>").text(name+" is a member of the "+party+" running for "+election));        
+        {
+            senate.append($("<div>").text(name+" is a member of the "+party).addClass(status));       
+        }
     }
-    main.append(senate, house);
+    $("#list-of-candidates").append(senate);
+    $("#list-of-candidates").append(house);
 }
 
 
@@ -64,7 +71,7 @@ function getHouseAndSenate(){
         }
     }    
     $.ajax(settings).done(function (response) {
-        getRepInfo(response);
+        displayHouseAndSenate(response);
     });
 }
 

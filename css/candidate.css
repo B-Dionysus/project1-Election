@@ -1,0 +1,18 @@
+#senate{
+    border: 1px solid gainsboro;
+    width: fit-content;
+}
+
+#house{
+
+    border: 1px solid gainsboro;
+    width: fit-content;
+
+}
+.incumbent{
+    font-weight: bold;
+}
+#president{
+
+    border: 1px solid gainsboro;
+}
