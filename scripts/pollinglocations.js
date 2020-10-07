@@ -4,14 +4,14 @@ $("#submitAddress").click(function(e){
     e.preventDefault();
     //get user address from input field.
     var userAddress = $("#findtext").val().trim();
-    // acces the Google Civic jquery
+    // access the Google Civic jquery
     $.ajax({
         url: "https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?address=" + userAddress + "&key=AIzaSyDDcoCWMnPNLsXimjEmRL85TOfhM9yPsA8",
         method: "GET",
     }).then(function(response) {
         console.log(response)
         // create a for loop that loops 10 times
-        for( i=0; i <11; i++){
+        for( i=0; i <11; i++){                    
             //create a new div to hold polling locations info
             var newDiv = $("<div>");
             newDiv.attr("class", "polling-locations");
