@@ -27,15 +27,15 @@ function displayHouseAndSenate(response){
         status=candidate.incumbent_challenge_full.toLowerCase();
         if(candidate.office_full.toUpperCase()==="HOUSE")
         {
-            house.append($("<div>").text(name+" is a member of the "+party).addClass(status));
+            house.append($("<p>").text(name+" is a member of the "+party).addClass(status));
         }
         else
         {
-            senate.append($("<div>").text(name+" is a member of the "+party).addClass(status));       
+            senate.append($("<p>").text(name+" is a member of the "+party).addClass(status));       
         }
     }
-    $("#list-of-candidates").append(senate);
-    $("#list-of-candidates").append(house);
+    $("#senate-data").append(senate);
+    $("#house-data").append(house);
 }
 
 
