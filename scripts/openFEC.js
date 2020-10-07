@@ -1,6 +1,7 @@
 $(document).ready(init);
 var _rep;
 function init(){
+    console.log(":HI");
     getHouseAndSenate();
 }
 
@@ -13,12 +14,13 @@ function displayHouseAndSenate(response){
     senate.append($("<h2>").text("Senate"));
     house.append($("<h2>").text("House"));
 
-    var senate=$("<div>").attr("id","senate");
-    senate.addClass("container ");
-    var house=$("<div>").attr("id","house");
-    house.addClass("container");
-    house.append($("h3")).text("House");
-    senate.append($("h3")).text("Senate");
+    var senate=$("<p>").attr("id","senate");
+    // senate.addClass("container ");
+    var house=$("<p>").attr("id","house");
+    // house.addClass("container");
+
+    // house.append($("h3")).text("House");
+    // senate.append($("h3")).text("Senate");
         
     for (candidate of response.results){
         var name=titleCase(candidate.name);
@@ -34,6 +36,7 @@ function displayHouseAndSenate(response){
             senate.append($("<p>").text(name+" is a member of the "+party).addClass(status));       
         }
     }
+    console.log(senate);
     $("#senate-data").append(senate);
     $("#house-data").append(house);
 }
