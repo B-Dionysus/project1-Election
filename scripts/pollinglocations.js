@@ -26,7 +26,7 @@ $("#submitAddress").click(function(e){
             var address = $("<div>").text("Address: " + pollAddress);
             address.attr("class", "address-name");
 
-            var hours = $("<div>").text("Hours: " + response.earlyVoteSites[i].pollingHours)
+            // var hours = $("<div>").text("Hours: " + response.earlyVoteSites[i].pollingHours)
 
             var directions = $("<button>").text("Find Directions");
             directions.attr("class", "button-name");
@@ -34,7 +34,7 @@ $("#submitAddress").click(function(e){
             //append all individual info divs to one main div
             newDiv.append(pollName);
             newDiv.append(address);
-            newDiv.append(hours);
+            // newDiv.append(hours);
             newDiv.append(directions);
 
             // apend div with all info to html
