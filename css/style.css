@@ -10,7 +10,9 @@ body * {
 
 }
 /* Nav */
-
+.nav-links{
+  
+}
 
 
 
@@ -20,22 +22,19 @@ body * {
   align-content: center;
   font-weight: bold;
   font-family: 'Bebas Neue', cursive;
+  letter-spacing: 3px;
 }
 
 .hero{
-  background-color: darkgrey;
+  background-color: maroon;
+  color: white;
   padding-top: 80px;
   padding-bottom:80px;
   height: 400px;
 }
-.heroh1{
-  text-align: center;
-  font-family: 'Bebas Neue', cursive;
-}
-
 
 .hero-search-filter {
-  background: url("https://images.pexels.com/photos/115095/pexels-photo-115095.jpeg?w=940&h=650&auto=compress&cs=tinysrgb") center center no-repeat;
+  /* background: url("") center center no-repeat; */
   height: 300px;
   background-size: cover;
   display: -webkit-flex;
