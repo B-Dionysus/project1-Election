@@ -4,10 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Candidates | VOTE 2020</title>
-    <link rel="stylesheet" href="./css/foundationmin.css">
+    <link rel="stylesheet" href="./css/foundation.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/candidate.css">
   </head>
 
   <body>
@@ -47,7 +46,7 @@
   <li class="tabs-title"><a href="#panel6">Tab 6</a></li>
 </ul>
 <!-- content for canditate container -->
-<div class="tabs-content" data-tabs-content="example-tabs">
+<div class="tabs-content" data-tabs-content="tabs">
   <div class="tabs-panel is-active" id="senate-data">
   </div>
 
@@ -74,6 +73,50 @@
 </div>
 </section>
 
+
+<ul class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="example-tabs">
+  <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Tab 1</a></li>
+  <li class="tabs-title"><a href="#panel2">Tab 2</a></li>
+  <li class="tabs-title"><a href="#panel3">Tab 3</a></li>
+  <li class="tabs-title"><a href="#panel4">Tab 4</a></li>
+  <li class="tabs-title"><a href="#panel5">Tab 5</a></li>
+  <li class="tabs-title"><a href="#panel6">Tab 6</a></li>
+</ul>
+
+<div class="tabs-content" data-tabs-content="example-tabs">
+  <div class="tabs-panel is-active" id="panel1">
+    <p>one</p>
+    <p>Check me out! I'm a super cool Tab panel with text content!</p>
+  </div>
+  <div class="tabs-panel" id="panel2">
+    <p>two</p>
+    <!-- <img class="thumbnail" src="assets/img/generic/rectangle-7.jpg"> -->
+  </div>
+  <div class="tabs-panel" id="panel3">
+    <p>three</p>
+    <p>Check me out! I'm a super cool Tab panel with text content!</p>
+  </div>
+  <div class="tabs-panel" id="panel4">
+    <p>four</p>
+    <!-- <img class="thumbnail" src="assets/img/generic/rectangle-2.jpg"> -->
+  </div>
+  <div class="tabs-panel" id="panel5">
+    <p>five</p>
+    <p>Check me out! I'm a super cool Tab panel with text content!</p>
+  </div>
+  <div class="tabs-panel" id="panel6">
+    <p>six</p>
+    <!-- <img class="thumbnail" src="assets/img/generic/rectangle-8.jpg"> -->
+  </div>
+</div>
+
+
+
+
+
+
+
+
 <!-- FOOTER -->
 <footer>
   
@@ -96,9 +139,11 @@
 </footer>
 
 
-    <script src="./scripts/foundation/foundationjquery.js"></script>
-    <script src="./scripts/foundation/foundationjs.js"></script>
-    <script src="./scripts/openFEC.js"></script>
+
+<script src="./scripts/foundation/jquery.js"></script>
+<script src="./scripts/foundation/what-input.js"></script>
+<script src="./scripts/foundation/foundation.js"></script>
+<script src="./scripts/openFEC.js"></script>
     <script>
       $(document).foundation();
     </script>
