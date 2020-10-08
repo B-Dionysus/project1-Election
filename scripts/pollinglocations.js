@@ -12,7 +12,7 @@ $("#submitAddress").click(function(e){
         // clear the last search results
         $("#polling").empty();
         // create a for loop that loops 10 times
-        for( i=0; i <11; i++){                    
+        for( i=0; i <10; i++){                    
             //create a new div to hold polling locations info
             var newDiv = $("<div>");
             newDiv.attr("class", "callout small");
