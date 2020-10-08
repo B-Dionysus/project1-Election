@@ -57,16 +57,18 @@ function titleCase(str){
     if(!str) return false;
     allStr=str.toLowerCase().split(" ");
     final="";
+    var pos=0;
     for(w of allStr){
         if(w.charAt(0)==="("){
             pos=1;
         }
         // Set up a variable that is the first character of the word and make it upperCase
-        var l=w.charAt(0).toUpperCase();
+        var l=w.charAt(pos).toUpperCase();
         // Remove the first character
-        w=w.slice(1);
+        w=w.slice(pos+1);
         // Add in our new upperCase character
          w=l+w;
+         if(pos)w="("+w;
         final+=w+" ";
     }
     return final;
