@@ -16,18 +16,18 @@ $("#submitAddress").click(function(e){
         var newDiv = $("<div>");
             newDiv.attr("class", "callout small");
             //call info from APi and create new div for each info with own class.
-            var pollName = $("<div>").text(response.pollingLocations[0].notes);
+            var pollName = $("<p>").text(response.pollingLocations[0].notes);
             pollName.attr("class", "location-name")
             
             var pollAddressCity = response.pollingLocations[0].address.city
             var pollAddressLine1 = response.pollingLocations[0].address.line1
             var pollAddressState = response.pollingLocations[0].address.state
             var pollAddress =  pollAddressLine1 + " " + pollAddressCity + ", " + pollAddressState;
-            var address = $("<div>").text("Address: ").attr("class", "poll-address");
+            var address = $("<p>").text("Address: ").attr("class", "poll-address");
             address.append($("<span>").text(pollAddress).attr("class", "span"));
             address.attr("class", "address-name");
 
-            var hours = $("<div>").text("Hours: ").attr("class", "poll-hours"); 
+            var hours = $("<p>").text("Hours: ").attr("class", "poll-hours"); 
             hours.append("<span>").text(response.pollingLocations[0].pollingHours).attr("class", "span");
             // var hours = $("<div>").text("Hours: " + response.earlyVoteSites[i].pollingHours)
 
