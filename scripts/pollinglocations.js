@@ -5,31 +5,75 @@ $("#submitAddress").click(function(e){
     //get user address from input field.
     var userAddress = $("#findtext").val().trim();
     // access the Google Civic jquery
+    console.log(userAddress);
     $.ajax({
-        url: "https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?address=" + userAddress + "&key=AIzaSyDDcoCWMnPNLsXimjEmRL85TOfhM9yPsA8",
+        url: "https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?electionId=7000&address=" + userAddress + "&key=AIzaSyDDcoCWMnPNLsXimjEmRL85TOfhM9yPsA8",
         method: "GET",
     }).then(function(response) {
+        console.log(response);
+
+        $("#userpolling").empty();
+        var newDiv = $("<div>");
+            newDiv.attr("class", "callout small");
+            //call info from APi and create new div for each info with own class.
+            var pollName = $("<div>").text(response.pollingLocations[0].notes);
+            pollName.attr("class", "location-name")
+            
+            var pollAddressCity = response.pollingLocations[0].address.city
+            var pollAddressLine1 = response.pollingLocations[0].address.line1
+            var pollAddressState = response.pollingLocations[0].address.state
+            var pollAddress =  pollAddressLine1 + " " + pollAddressCity + ", " + pollAddressState;
+            var address = $("<div>").text("Address: ").attr("class", "poll-address");
+            address.append($("<span>").text(pollAddress).attr("class", "span"));
+            address.attr("class", "address-name");
+
+            var hours = $("<div>").text("Hours: ").attr("class", "poll-hours"); 
+            hours.append("<span>").text(response.pollingLocations[0].pollingHours).attr("class", "span");
+            // var hours = $("<div>").text("Hours: " + response.earlyVoteSites[i].pollingHours)
+
+            var directions = $("<button>").text("Find Directions");
+            directions.attr("class", "button-name");
+            // create an attr to store the polling address in the button
+            directions.attr("data-address", pollAddress);
+            
+            
+            //append all individual info divs to one main div
+            newDiv.append(pollName);
+            newDiv.append(address);
+            newDiv.append(hours);
+            // newDiv.append(startDate);
+            // newDiv.append(endDate);
+            newDiv.append(directions);
+
+            // apend div with all info to html
+            $("#userpolling").append(newDiv);
         // clear the last search results
-        $("#polling").empty();
+        $("#earlypolling").empty();
         // create a for loop that loops 10 times
         for( i=0; i <10; i++){                    
             //create a new div to hold polling locations info
             var newDiv = $("<div>");
             newDiv.attr("class", "callout small");
             //call info from APi and create new div for each info with own class.
-            var pollName = $("<div>").text(response.earlyVoteSites[i].address.locationName);
+            var pollName = $("<h5>").text(response.earlyVoteSites[i].address.locationName);
             pollName.attr("class", "location-name")
             
             var pollAddressCity = response.earlyVoteSites[i].address.city
             var pollAddressLine1 = response.earlyVoteSites[i].address.line1
             var pollAddressState = response.earlyVoteSites[i].address.state
             var pollAddress =  pollAddressLine1 + " " + pollAddressCity + ", " + pollAddressState;
-            var address = $("<div>").text("Address: " + pollAddress);
+            var address = $("<p>").text("Address: ").attr("class", "poll-address");
+            address.append($("<span>").text(pollAddress).attr("class", "span"));
             address.attr("class", "address-name");
 
-            var startDate = $("<div>").text("Start Date: " +response.earlyVoteSites[i].startDate).attr("class", "start-date")
-            var endDate = $("<div>").text("End Date: " + response.earlyVoteSites[i].endDate).attr("class", "end-date")
-            var hours = $("<div>").text("Hours: M-F: 8:30am-7pm || S-S: 9am-5pm").attr("class", "poll-hours")
+            var startDate = $("<p>").text("Start Date: ").attr("class", "start-date"); 
+            startDate.append($("<span>").text(response.earlyVoteSites[i].startDate).attr("class", "span"));
+
+            var endDate = $("<p>").text("End Date: ").attr("class", "end-date");  
+            endDate.append($("<span>").text(response.earlyVoteSites[i].endDate).attr("class", "span"));
+
+            var hours = $("<p>").text("Hours: ").attr("class", "poll-hours");
+            hours.append($("<span>").text("M-F: 8:30am-7pm || Sat-Sun: 9am-5pm").attr("class", "span"));
             // var hours = $("<div>").text("Hours: " + response.earlyVoteSites[i].pollingHours)
 
             var directions = $("<button>").text("Find Directions");
@@ -47,7 +91,7 @@ $("#submitAddress").click(function(e){
             newDiv.append(directions);
 
             // apend div with all info to html
-            $("#polling").append(newDiv);
+            $("#earlypolling").append(newDiv);
         }
         //create an on click event for each button.
         $(".button-name").click(function(){
