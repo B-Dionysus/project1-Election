@@ -19,7 +19,9 @@ function displayPresident(response){
         if(candidate.party_full) var party=titleCase(candidate.party_full);
         else party="Unknown Party";
         status=candidate.incumbent_challenge_full.toLowerCase();
-        pres.append($("<p>").text(name+" is a member of the "+party).addClass(status));
+        // Let's limit this to only folks with an FEC filing from this year
+        if(filing.split("-")[0]==="2020" && filing.split("-")[1]>2)
+         pres.append($("<p>").text(name+" is a member of the "+party).addClass(status));
     }
     $("#pres-data").append(pres);
 }
