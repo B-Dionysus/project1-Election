@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Candidates | VOTE 2020</title>
-    <link rel="stylesheet" href="./css/foundationmin.css">
+    <link rel="stylesheet" href="./css/foundation.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/candidate.css">
+
   </head>
 
   <body>
@@ -19,19 +20,18 @@
   </div>
   <div class= "top-bar-right">
       <ul class="menu">
-        <li><a href="#">Find My Polling Place</a></li>
-        <li><a href="#">Register to Vote</a></li>
-        <li><a href="#">Election Candidates?</a></li>
+        <li><a href="./mainpage.html">Home</a></li>
+        <li><a href="./findmypollingplace.html">Find My Polling Place</a></li>
+        <li><a href="./registertovote.html">Register to Vote</a></li>
+        <li><a href="./candidates.html">Election Candidates</a></li>
       </ul>
   </div>
 </nav>
 <!-- Search Area/"Hero" Section -->
     <!-- Hero Section -->
-    <section class="hero heromainpage">
-      <header class="wrap hero hero-search-filter">
-        <div class="hero-search-filter-content wrap">
-          <h1 class= "hero-header">Candidates</h1>
-        </div>
+    <section class="hero" id="subpagehero">
+      <header class="subpageheader wrap">
+          <h1 class= "subpage-hero-h1">Candidates</h1>
       </header>
     </section>
 <!-- MAIN SECTION:-->
@@ -40,24 +40,25 @@
 <!-- nav tabs for candidate container  -->
 <ul class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="candidates-tabs">
   <li class="tabs-title is-active"><a href="#senate-data" aria-selected="true">Senate</a></li>
-  <li class="tabs-title"><a href="#house-data">Tab 2</a></li>
-  <li class="tabs-title"><a href="#panel3">Tab 3</a></li>
+  <li class="tabs-title"><a href="#house-data" >House Candidates</a></li>
+  <li class="tabs-title"><a href="#pres-data">Presidential Candidates</a></li>
   <li class="tabs-title"><a href="#panel4">Tab 4</a></li>
   <li class="tabs-title"><a href="#panel5">Tab 5</a></li>
   <li class="tabs-title"><a href="#panel6">Tab 6</a></li>
+  <!-- End of UL -->
 </ul>
 <!-- content for canditate container -->
-<div class="tabs-content" data-tabs-content="example-tabs">
+<div class="tabs-content" data-tabs-content="candidates-tabs">
   <div class="tabs-panel is-active" id="senate-data">
+    <h5>Senate Race</h5>
   </div>
 
-  <div class="tabs-panel" id="house-data">
-    <p>two</p>
+  <div class="tabs-panel " id="house-data">
+    <h5>House Race</h5>
     <!-- <img class="thumbnail" src="assets/img/generic/rectangle-7.jpg"> -->
   </div>
-  <div class="tabs-panel" id="panel3">
-    <p>three</p>
-    <p>Check me out! I'm a super cool Tab panel with text content!</p>
+  <div class="tabs-panel" id="pres-data">
+    <h5>Presidential Race</h5>
   </div>
   <div class="tabs-panel" id="panel4">
     <p>four</p>
@@ -96,9 +97,11 @@
 </footer>
 
 
-    <script src="./scripts/foundation/foundationjquery.js"></script>
-    <script src="./scripts/foundation/foundationjs.js"></script>
-    <script src="./scripts/openFEC.js"></script>
+
+<script src="./scripts/foundation/jquery.js"></script>
+<script src="./scripts/foundation/what-input.js"></script>
+<script src="./scripts/foundation/foundation.js"></script>
+<script src="./scripts/openFEC.js"></script>
     <script>
       $(document).foundation();
     </script>

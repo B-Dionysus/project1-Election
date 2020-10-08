@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VOTE 2020</title>
-    <link rel="stylesheet" href="./css/foundationmin.css">
+    <link rel="stylesheet" href="./css/foundation.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
   </head>
@@ -17,11 +17,12 @@
       <h3>Vote 2020</h3>
   </div>
   <div class= "top-bar-right">
-      <ul class="menu nav-links">
-        <li><a href="#">Find My Polling Place</a></li>
-        <li><a href="#">Register to Vote</a></li>
-        <li><a href="#">Election Candidates?</a></li>
-      </ul>
+    <ul class="menu">
+      <li><a href="./mainpage.html">Home</a></li>
+      <li><a href="./findmypollingplace.html">Find My Polling Place</a></li>
+      <li><a href="./registertovote.html">Register to Vote</a></li>
+      <li><a href="./candidates.html">Election Candidates</a></li>
+    </ul>
   </div>
 </nav>
 <!-- Search Area/"Hero" Section -->
@@ -40,32 +41,36 @@
     </section>
   
 <!-- MAIN SECTION:-->
-<div class="row column">
-  <hr>
-</div>
-<div class="row small-up-1 medium-up-2 large-up-3">
-  <div class="column">
-    <div class="callout">
-      <p>Register to Vote</p>
-      <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-      <p class="lead">How to Register</p>
-      <p class="subheader">A list of resources of how, and where to register to vote</p>
+<!-- <div class="row">
+  <div class="small-2 large-4 columns">CONTENT</div>
+  <div class="small-4 large-4 columns">CONTENT</div>
+  <div class="small-6 large-4 columns">CONTENT</div>
+</div> -->
+<div class= "container wrap">
+  <div class="row small-up-1 medium-up-2 large-up-3">
+    <div class="column">
+      <div class="callout">
+        <p>Register to Vote</p>
+        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
+        <p class="lead">How to Register</p>
+        <p class="subheader">A list of resources of how, and where to register to vote</p>
+      </div>
     </div>
-  </div>
-  <div class="column">
-    <div class="callout">
-      <p>Election Day</p>
-      <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="Register to Vote"></p>
-      <p class="lead">Countdown: Nov. 3</p>
-      <button class="button">Add to Calendar</button>
+    <div class="column">
+      <div class="callout">
+        <p>Election Day</p>
+        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="Register to Vote"></p>
+        <p class="lead">Countdown: Nov. 3</p>
+        <button class="button">Add to Calendar</button>
+      </div>
     </div>
-  </div>
-  <div class="column">
-    <div class="callout">
-      <p>What's on My Ballot</p>
-      <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-      <p class="lead">Not Sure Where to Begin?</p>
-      <p class="subheader">Find out what's on your ballot using the resources here</p>
+    <div class="column">
+      <div class="callout">
+        <p>What's on My Ballot</p>
+        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
+        <p class="lead">Not Sure Where to Begin?</p>
+        <p class="subheader">Find out what's on your ballot using the resources here</p>
+      </div>
     </div>
   </div>
 </div>
@@ -92,11 +97,12 @@
 </footer>
 
 
-    <script src="./scripts/foundation/foundationjs.js"></script>
-    <script src="./scripts/foundation/foundationjquery.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
+<script src="./scripts/foundation/jquery.js"></script>
+<script src="./scripts/foundation/what-input.js"></script>
+<script src="./scripts/foundation/foundation.js"></script>
+<script>
+  $(document).foundation();
+</script>
   </body>
 </html>
 
