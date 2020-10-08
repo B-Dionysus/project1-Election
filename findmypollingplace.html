@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VOTE 2020</title>
-    <link rel="stylesheet" href="./css/foundation.css">
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="./css/foundationmin.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
   </head>
@@ -17,38 +17,35 @@
       <h3>Vote 2020</h3>
   </div>
   <div class= "top-bar-right">
-    <ul class="menu">
-      <li><a href="./mainpage.html">Home</a></li>
-      <li><a href="./findmypollingplace.html">Find My Polling Place</a></li>
-      <li><a href="./registertovote.html">Register to Vote</a></li>
-      <li><a href="./candidates.html">Election Candidates</a></li>
-    </ul>
+      <ul class="menu">
+        <li><a href="#">Find My Polling Place</a></li>
+        <li><a href="#">Register to Vote</a></li>
+        <li><a href="#">Election Candidates?</a></li>
+      </ul>
   </div>
 </nav>
 <!-- Search Area/"Hero" Section -->
     <!-- Hero Section -->
-    <section class="hero subpage">
-      <header class="wrap hero hero-search-filter">
-        <div class="hero-search-filter-content wrap">
-          <h1 class= "hero-header">Find My Polling Place</h1>
-          <form class="hero-search-filter-form" action="">
-            <label for="findtext">Address</label>
-            <input id="findtext" class="hero-search-filter-form-find" type="text" />
-            <button class="button">SEARCH</button>
-          </form>
-        </div>
-      </header>
+    <section class="hero herosubpage2">
+            <header class="wrap hero hero-search-filter">
+              <div class="hero-search-filter-content wrap">
+                <h1 class= "hero-header">Find My Polling Place</h1>
+                <form class="hero-search-filter-form" action="">
+                  <label for="findtext">Address</label>
+                  <input id="findtext" class="hero-search-filter-form-find" type="text" />
+                  <button class="button" id = "submitAddress">SEARCH</button>
+                </form>
+              </div>
+            </header>
+          </section>
     </section>
   
 <!-- MAIN SECTION:-->
-<div class="container wrap">
-  <div class="callout small">
-    <h5>Location</h5>
-    <p>Address</p>
-    <a href="#">Get Directions</a>
-  </div>
-  
-</div>
+<section class="main">
+    <div class="container-pollingplace">
+       <!-- Polling Places Info -->
+    </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -71,15 +68,12 @@
 
 </footer>
 
-
-<script src="./scripts/foundation/jquery.js"></script>
-<script src="./scripts/foundation/what-input.js"></script>
-<script src="./scripts/foundation/foundation.js"></script>
-<script>
-  $(document).foundation();
-</script>
+   
+    <script src="./scripts/foundation/foundationjquery.js"></script>
+    <script src="./scripts/foundation/foundationjs.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script src="./scripts/pollinglocations.js"></script>
   </body>
-</html>
-
-</body>
 </html>

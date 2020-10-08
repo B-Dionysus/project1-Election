@@ -47,7 +47,7 @@ $("#submitAddress").click(function(event){
             newDiv.append(directions);
 
             // apend div with all info to html
-            $(".container-pollingplace").append(newDiv);
+            $(".pollingplace").append(newDiv);
         }
         //create an on click event for each button.
         $(".button-name").click(function(){
