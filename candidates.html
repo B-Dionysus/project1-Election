@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Candidates | VOTE 2020</title>
+    <title>Candidates | VOTE 2020</title>    
     <link rel="stylesheet" href="./css/foundation.css">
+    <link rel="stylesheet" href="./css/foundation.min.css">
+    <!-- <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/candidate.css">
@@ -42,9 +44,9 @@
   <li class="tabs-title is-active"><a href="#senate-data" aria-selected="true">Senate</a></li>
   <li class="tabs-title"><a href="#house-data" >House Candidates</a></li>
   <li class="tabs-title"><a href="#pres-data">Presidential Candidates</a></li>
-  <li class="tabs-title"><a href="#panel4">Tab 4</a></li>
-  <li class="tabs-title"><a href="#panel5">Tab 5</a></li>
-  <li class="tabs-title"><a href="#panel6">Tab 6</a></li>
+  <li class="tabs-title"><a href="#panel4">Test</a></li>
+  <!-- <li class="tabs-title"><a href="#panel5">Tab 5</a></li>
+  <li class="tabs-title"><a href="#panel6">Tab 6</a></li> -->
   <!-- End of UL -->
 </ul>
 <!-- content for canditate container -->
@@ -55,16 +57,19 @@
 
   <div class="tabs-panel " id="house-data">
     <h5>House Race</h5>
-    <!-- <img class="thumbnail" src="assets/img/generic/rectangle-7.jpg"> -->
   </div>
   <div class="tabs-panel" id="pres-data">
     <h5>Presidential Race</h5>
   </div>
   <div class="tabs-panel" id="panel4">
-    <p>four</p>
-    <!-- <img class="thumbnail" src="assets/img/generic/rectangle-2.jpg"> -->
+    <div class="row">
+      <div class="columns small-2 large-4">Republican</div>
+      <div class="columns small-4 large-4">Democrat</div>
+      <div class="columns small-6 large-4">Other</div>
+    </div>
+
   </div>
-  <div class="tabs-panel" id="panel5">
+  <!-- <div class="tabs-panel" id="panel5">
     <p>five</p>
     <p>Check me out! I'm a super cool Tab panel with text content!</p>
   </div>
@@ -101,6 +106,8 @@
 <script src="./scripts/foundation/jquery.js"></script>
 <script src="./scripts/foundation/what-input.js"></script>
 <script src="./scripts/foundation/foundation.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script> -->
 <script src="./scripts/openFEC.js"></script>
     <script>
       $(document).foundation();
