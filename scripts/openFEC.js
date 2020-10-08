@@ -1,19 +1,33 @@
 $(document).ready(init);
 var _rep;
-
-
+var prevState=""; // If the user has been here, save the last state they searched
+var defaultState="IL"; // If the user has not been here, show them data from this state initially
 function init(){
     // Put the presidential data in #pres-data
-    getPresident();
     // Put the senate data in #senate-data and the house data in #house-data
-    getHouseAndSenate("NC");
+    $("#state").on("change",loadData);
+    // If it exists, assign the localstorage variable to prevState, and search for that
+    // If not, just search for Alabama
+    if(prevState=localStorage.getItem("prevState")){
+        console.log(prevState);
+        $("#state").val(prevState);
+    }
+    else $("#state").val(defaultState);
+    loadData();
+}
+function loadData(){
+    stateChoice=$("#state").val();
+    getPresident();
+    getHouseAndSenate(stateChoice);
+
 }
 
 // Called from getPresident
 // Displays name and party data for everyone who filed a presidential run in 2020
 // and puts it in #pres-data
 function displayPresident(response){
-    _rep=response;
+    
+    $("#pres-data").html("");
     var pres=$("<p>").attr("id","president");
     for(candidate of response.results){    
         var filing=candidate.last_file_date;   
@@ -41,9 +55,15 @@ function displayPresident(response){
 // Displays name and party data for everyone running for house or senate in 2020
 // and puts it in #senate-data and #house-data
 function displayHouseAndSenate(response){
+    $("#senate-data").html("");
+    $("#house-data").html("");
+    _rep=response;
     var senate=$("<p>").attr("id","senate");
     var house=$("<p>").attr("id","house");
-        
+    var houseNum=0;
+    var senNum=0;
+    var state=response.results[0].state;
+    localStorage.setItem("prevState",state);
     for (candidate of response.results){
         var name=titleCase(candidate.name);
         var party=titleCase(candidate.party_full);
@@ -52,12 +72,16 @@ function displayHouseAndSenate(response){
         if(candidate.office_full.toUpperCase()==="HOUSE")
         {
             house.append($("<p>").text(name+" is a member of the "+party).addClass(status));
+            houseNum++;
         }
         else
         {
             senate.append($("<p>").text(name+" is a member of the "+party).addClass(status));       
+            senNum++;
         }
     }
+    if(houseNum===0) house.append($("<p>").text("No FEC filings for this race.").addClass("error"));
+    if(senNum===0) senate.append($("<p>").text("No FEC filings for this race.").addClass("error"));
     $("#senate-data").append(senate);
     $("#house-data").append(house);
 }
