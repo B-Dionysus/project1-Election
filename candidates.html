@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Candidates | VOTE 2020</title>
+    <title>Candidates | VOTE 2020</title>    
     <link rel="stylesheet" href="./css/foundation.css">
+    <link rel="stylesheet" href="./css/foundation.min.css">
+    <!-- <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/candidate.css">
@@ -29,9 +31,16 @@
 </nav>
 <!-- Search Area/"Hero" Section -->
     <!-- Hero Section -->
-    <section class="hero" id="subpagehero">
-      <header class="subpageheader wrap">
-          <h1 class= "subpage-hero-h1">Candidates</h1>
+    <section class="hero subpage">
+      <header class="wrap hero hero-search-filter">
+        <div class="hero-search-filter-content wrap">
+          <h1 class= "hero-header">Candidates</h1>
+          <form>
+            <fieldset>
+              <label for="state">Search Candidates by State</label>
+                <select id="state" name="state"><option value="---">---</option><option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Guam">Guam</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option></select>
+            </fieldset>
+          </form>
       </header>
     </section>
 <!-- MAIN SECTION:-->
@@ -42,9 +51,9 @@
   <li class="tabs-title is-active"><a href="#senate-data" aria-selected="true">Senate</a></li>
   <li class="tabs-title"><a href="#house-data" >House Candidates</a></li>
   <li class="tabs-title"><a href="#pres-data">Presidential Candidates</a></li>
-  <li class="tabs-title"><a href="#panel4">Tab 4</a></li>
-  <li class="tabs-title"><a href="#panel5">Tab 5</a></li>
-  <li class="tabs-title"><a href="#panel6">Tab 6</a></li>
+  <li class="tabs-title"><a href="#panel4">Test</a></li>
+  <!-- <li class="tabs-title"><a href="#panel5">Tab 5</a></li>
+  <li class="tabs-title"><a href="#panel6">Tab 6</a></li> -->
   <!-- End of UL -->
 </ul>
 <!-- content for canditate container -->
@@ -55,16 +64,19 @@
 
   <div class="tabs-panel " id="house-data">
     <h5>House Race</h5>
-    <!-- <img class="thumbnail" src="assets/img/generic/rectangle-7.jpg"> -->
   </div>
   <div class="tabs-panel" id="pres-data">
     <h5>Presidential Race</h5>
   </div>
   <div class="tabs-panel" id="panel4">
-    <p>four</p>
-    <!-- <img class="thumbnail" src="assets/img/generic/rectangle-2.jpg"> -->
+    <div class="row">
+      <div class="columns small-2 large-4">Republican</div>
+      <div class="columns small-4 large-4">Democrat</div>
+      <div class="columns small-6 large-4">Other</div>
+    </div>
+
   </div>
-  <div class="tabs-panel" id="panel5">
+  <!-- <div class="tabs-panel" id="panel5">
     <p>five</p>
     <p>Check me out! I'm a super cool Tab panel with text content!</p>
   </div>
@@ -95,7 +107,6 @@
   </div>
 
 </footer>
-
 
 
 <script src="./scripts/foundation/jquery.js"></script>
