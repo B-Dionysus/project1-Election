@@ -1,6 +1,6 @@
 $(document).ready(init);
-
 var _rep;
+
 
 function init(){
     // Put the presidential data in #pres-data
@@ -15,15 +15,25 @@ function init(){
 function displayPresident(response){
     _rep=response;
     var pres=$("<p>").attr("id","president");
-    for(candidate of response.results){        
-        var filing=candidate.last_file_date;
+    for(candidate of response.results){    
+        var filing=candidate.last_file_date;   
+        // Names come by default in all uppercase
+        // titleCase() is in ./scripts/utilities.js
         var name=titleCase(candidate.name);
+        // Names come by default last-name-first
+       // temp=name.split(",");
+        //name=temp[1]+temp[0];
+        // Unfortunately, the data may include honorifics at the end, without demarcation
+        // e.g. "Biden, Joseph R Jr," and these appear to be arbitrary
+        // e.g. "Jones, Take Mr.", so I don't think there's a clear way to sort them.
+        // Also, while I'm here, only of the presidential candidates is listed as
+        // "Title, Sheila Samm Mpresident". This is how they appear in the data set from the FEC. 
         if(candidate.party_full) var party=titleCase(candidate.party_full);
         else party="Unknown Party";
         status=candidate.incumbent_challenge_full.toLowerCase();
         // Let's limit this to only folks with an FEC filing from this year
-        if(filing.split("-")[0]==="2020" && filing.split("-")[1]>2)
-            pres.append($("<p>").text(name+" is a member of the "+party).addClass(status));
+       if(filing.split("-")[0]==="2020" && filing.split("-")[1]>2)
+         pres.append($("<p>").text(name+" is a member of the "+party).addClass(status));
     }
     $("#pres-data").append(pres);
 }
@@ -55,21 +65,6 @@ function displayHouseAndSenate(response){
 
 
 
-// titleCase() 
-// takes "STRING HERE" or "string here" and returns "String Here"
-function titleCase(str){
-    if(!str) return false;
-    allStr=str.toLowerCase().split(" ");
-    final="";
-    for(w of allStr){
-        
-        var l=w.charAt(0).toUpperCase();
-        w=w.slice(1);
-         w=l+w;
-        final+=w+" ";
-    }
-    return final;
-}
 
 
 
