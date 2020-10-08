@@ -1,6 +1,0 @@
-{
-    "cmake.configureOnOpen": false,
-    "files.autoSave": "onFocusChange",
-    "editor.mouseWheelZoom": true,
-    "workbench.colorTheme": "Latehours Bright"
-}
