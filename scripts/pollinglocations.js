@@ -1,7 +1,7 @@
 
 // create click event for the submit address button
-$("#submitAddress").click(function(event){
-    event.preventDefault();
+$("#submitAddress").click(function(e){
+    e.preventDefault();
     //get user address from input field.
     var userAddress = $("#findtext").val().trim();
     // access the Google Civic jquery
@@ -10,12 +10,12 @@ $("#submitAddress").click(function(event){
         method: "GET",
     }).then(function(response) {
         // clear the last search results
-        $(".container-pollingplace").empty();
+        $("#polling").empty();
         // create a for loop that loops 10 times
         for( i=0; i <11; i++){                    
             //create a new div to hold polling locations info
             var newDiv = $("<div>");
-            newDiv.attr("class", "polling-locations");
+            newDiv.attr("class", "callout small");
             //call info from APi and create new div for each info with own class.
             var pollName = $("<div>").text(response.earlyVoteSites[i].address.locationName);
             pollName.attr("class", "location-name")
@@ -47,7 +47,7 @@ $("#submitAddress").click(function(event){
             newDiv.append(directions);
 
             // apend div with all info to html
-            $(".container-pollingplace").append(newDiv);
+            $("#polling").append(newDiv);
         }
         //create an on click event for each button.
         $(".button-name").click(function(){
