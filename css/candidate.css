@@ -9,7 +9,9 @@
     width: fit-content;
 
 } */
-
+.search-label{
+    color:white;
+}
 .incumbent{
     font-weight: bold;
 }
