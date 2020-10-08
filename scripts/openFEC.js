@@ -1,6 +1,6 @@
 $(document).ready(init);
 
-
+var _rep;
 
 function init(){
     // Put the presidential data in #pres-data
@@ -13,13 +13,17 @@ function init(){
 // Displays name and party data for everyone who filed a presidential run in 2020
 // and puts it in #pres-data
 function displayPresident(response){
+    _rep=response;
     var pres=$("<p>").attr("id","president");
     for(candidate of response.results){        
+        var filing=candidate.last_file_date;
         var name=titleCase(candidate.name);
         if(candidate.party_full) var party=titleCase(candidate.party_full);
         else party="Unknown Party";
         status=candidate.incumbent_challenge_full.toLowerCase();
-        pres.append($("<p>").text(name+" is a member of the "+party).addClass(status));
+        // Let's limit this to only folks with an FEC filing from this year
+        if(filing.split("-")[0]==="2020" && filing.split("-")[1]>2)
+            pres.append($("<p>").text(name+" is a member of the "+party).addClass(status));
     }
     $("#pres-data").append(pres);
 }
