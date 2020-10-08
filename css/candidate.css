@@ -1,4 +1,4 @@
-#senate{
+/* #senate{
     border: 1px solid gainsboro;
     width: fit-content;
 }
@@ -8,14 +8,15 @@
     border: 1px solid gainsboro;
     width: fit-content;
 
-}
+} */
+
 .incumbent{
     font-weight: bold;
 }
-#president{
+/* #president{
 
     border: 1px solid gainsboro;
-}
+} */
 
 /* Subpage Hero */
 #subpagehero{
