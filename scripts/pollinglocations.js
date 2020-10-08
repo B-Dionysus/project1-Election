@@ -1,7 +1,7 @@
 
 // create click event for the submit address button
-$("#submitAddress").click(function(e){
-    e.preventDefault();
+$("#submitAddress").click(function(event){
+    event.preventDefault();
     //get user address from input field.
     var userAddress = $("#findtext").val().trim();
     // access the Google Civic jquery
@@ -56,3 +56,4 @@ $("#submitAddress").click(function(e){
         })
     });    
 });
+// test
