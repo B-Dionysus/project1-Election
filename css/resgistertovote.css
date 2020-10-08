@@ -1,0 +1,43 @@
+.work-feature-block {
+  padding: 10px 0;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+}
+
+.work-feature-block-image {
+  display: block;
+  margin: auto;
+  padding: 10px 0;
+}
+
+
+/* Subpage Hero */
+#subpagehero{
+  height: 250px;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+           align-items: center;
+  background-color: maroon;
+  color: white;
+}
+
+.subpage-hero-h1{
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 3px;
+}
+
+
+/* Rock the vote */
+.vote-container{
+  height: 450px;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
