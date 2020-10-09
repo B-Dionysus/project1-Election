@@ -4,6 +4,7 @@ $("#submitAddress").click(function(e){
     e.preventDefault();
     //get user address from input field.
     var userAddress = $("#findtext").val().trim();
+
     // access the Google Civic jquery
     console.log(userAddress);
     $.ajax({
@@ -48,7 +49,11 @@ $("#submitAddress").click(function(e){
             // apend div with all info to html
             $("#userpolling").append(newDiv);
         // clear the last search results
-        $("#earlypolling").empty();
+        $("#earlypolling").empty();    
+
+        // Store user zipcode in localStorage
+        localStorage.setItem("userZip",response.normalizedInput.zip);
+        
         // create a for loop that loops 10 times
         for( i=0; i <10; i++){                    
             //create a new div to hold polling locations info
