@@ -35,10 +35,10 @@
       <header class="wrap hero hero-search-filter">
         <div class="hero-search-filter-content wrap">
           <h1 class= "hero-header">Candidates</h1>
-          <form>
+          <form id="zipSearch">
             <fieldset>
-              <label for="state" class="search-label">Search Candidates by State</label>
-                <select id="state" name="state"><option value="---">---</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="GU">Guam</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="Kentucky">KY</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="Maryland">MD</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="Nevada">NV</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="MP">Northern Marianas Islands</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="PR">Puerto Rico</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="VI">Virgin Islands</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option></select>
+              <label for="state" class="search-label">Search Candidates by ZipCode</label>
+               <input id="zipcode"><button class="search-label" type="submit">Search</button>
             </fieldset>
           </form>
       </header>
@@ -51,9 +51,9 @@
   <li class="tabs-title"><a href="#pres-data">Presidential Candidates</a></li>
   <li class="tabs-title is-active"><a href="#senate-data" aria-selected="true">Senate</a></li>
   <li class="tabs-title"><a href="#house-data" >House Candidates</a></li>
-  <li class="tabs-title"><a href="#panel4">Test</a></li>
-  <!-- <li class="tabs-title"><a href="#panel5">Tab 5</a></li>
-  <li class="tabs-title"><a href="#panel6">Tab 6</a></li> -->
+  <li class="tabs-title"><a href="#state-house-data">State Senate</a></li>
+  <li class="tabs-title"><a href="#state-senate-data">State House</a></li>
+  <!--<li class="tabs-title"><a href="#panel6">Tab 6</a></li> -->
   <!-- End of UL -->
 </ul>
 <!-- content for canditate container -->
@@ -69,13 +69,11 @@
   <div class="tabs-panel " id="house-data">
     <h5>House Race</h5>
   </div>
-  <div class="tabs-panel" id="panel4">
-    <div class="row">
-      <div class="columns small-2 large-4">Republican</div>
-      <div class="columns small-4 large-4">Democrat</div>
-      <div class="columns small-6 large-4">Other</div>
-    </div>
-
+  <div class="tabs-panel" id="state-senate-data">
+    <h5>State Senate Race</h5>
+  </div>
+  <div class="tabs-panel" id="state-house-data">
+    <h5>State House Race</h5>
   </div>
   <!-- <div class="tabs-panel" id="panel5">
     <p>five</p>
@@ -114,7 +112,7 @@
 <script src="./scripts/foundation/what-input.js"></script>
 <script src="./scripts/foundation/foundation.js"></script>
 <script src="./scripts/utilities.js"></script>
-<script src="./scripts/openFEC.js"></script>
+<script src="./scripts/voteSmart.js"></script>
 
     <script>
       $(document).foundation();
