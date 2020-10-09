@@ -12,20 +12,20 @@
 
 #zipcode{
     padding: 9px;
-    width: 100px !important; 
   }
+.small-search{
+    width: 30% !important;
+}
 
 
 .input-group-rounded .input-group-field {
     border-radius: 5000px 0 0 5000px;
     padding-left: 1rem;
-    flex-wrap: nowrap;
   }
   
   .input-group-rounded .input-group-button .button {
     border-radius: 0 5000px 5000px 0;
     font-size: 0.8rem;
-    flex-wrap: nowrap;
   }
   
   
