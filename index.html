@@ -7,6 +7,7 @@
     <!-- <link rel="stylesheet" href="./css/foundation.css">
     <link rel="stylesheet" href="./css/foundation.min.css"> -->
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
   </head>
@@ -34,8 +35,8 @@
         <div class="hero-search-filter-content wrap">
           <h1 class= "hero-header">Find My Polling Place</h1>
           <form class="hero-search-filter-form" action="">
-            <label for="findtext">Address</label>
-            <input id="findtext" class="hero-search-filter-form-find" type="text" />
+            <!-- <label for="findtext">Address</label> -->
+            <input id="findtext" class="hero-search-filter-form-find" type="text" placeholder="123 Main Street City, State"/>
             <button class="button" id ="submitAddress">SEARCH</button>
           </form>
         </div>
@@ -52,7 +53,7 @@
         <p class="subheader">Check out this list of resources for voter registration, or use our tool to register to vote straight from our website powered by Rock The Vote.</p>
         <div style="text-align:center;">
           <br><br>
-          <button class="button">View Resources</button>
+          <a class="button secondary" href="./registertovote.html">View Resources</a>
         </div>
       </div>
     </div>
@@ -64,7 +65,16 @@
         <h3 class="lead election">days until the election</h3>
         <div style="text-align:center;">
           <br>
-          <button class="button">Add to Calendar</button>
+          <!-- <a class="button secondary" href="">Add to Calendar</a> -->
+          <!-- https://www.addevent.com/add-to-calendar-button -->
+          <div title="Add to Calendar" class="addeventatc">
+            Add to Calendar
+            <span class="start">11/03/2020 12:00 AM</span>
+            <span class="all_day_event">true</span>            
+            <span class="timezone">America/Los_Angeles</span>
+            <span class="title">Election Day</span>
+            <span class="description">The US General Election</span>
+        </div>
         </div>
       </div>
     </div>
@@ -78,7 +88,8 @@
           <br>
           <br>
           <br>
-          <button class="button">View Candidates</button>
+          <a class="button secondary" href="./candidates.html">View Candidates</a>
+          
         </div>
       </div>
     </div>
@@ -93,14 +104,13 @@
 
     <div class="medium-6 columns">
       <ul class="menu">
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Register to Vote</a></li>
+        <li><a href="./resources.html">Resources</a></li>
       </ul>
     </div>
 
     <div class="medium-6 columns">
       <ul class="menu float-right">
-        <li class="menu-text">Created by Aaron, Benjamin, and Sarah</li>
+        <li class="menu-text">Created by Aaron Ray, Benjamin Dionysus, and Sarah Barkley</li>
       </ul>
     </div>
   </div>
