@@ -73,5 +73,15 @@ function displaCandidates(response){
         }              
     }
     
+     
+    $(document).on("click",".candidate-name",loadBio);  
+    // Finally, we let foundation run its magic. This builds the accordion menus, among other things.
     $(document).foundation();
+}
+function loadBio(e){
+    console.log(this);
+    var bioBox=$("<div>").addClass("bioBox");
+
+    bioBox.html(modalHTML);
+    $("body").append(bioBox);
 }
