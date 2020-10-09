@@ -35,9 +35,6 @@
 
 /* Rock the vote */
 .vote-container{
-  height: 450px;
-  background-size: cover;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 0 auto;
+  min-height: 100%;
 }
