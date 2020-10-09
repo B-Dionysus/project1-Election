@@ -1,20 +1,25 @@
+var _USE_CACHED_DATA=false;
+
 $(document).ready(init);
+
+
 var _rep;
 // How is this documentation? I couldn't find the slightest guide to how to specify JSON as opposed to
 // XML anywhere on their site (although they helpfully included a link to wikipedia's JSON article!!!!!)
 //I finally found the answer in a random forum post here:
 // https://www.webdeveloper.com/d/217846-trying-to-access-project-votesmart-api/5
 function init(){
-    $("#zipSearch").on("submit",getElectionData);
+    if(_USE_CACHED_DATA)    
+        $("#zipSearch").on("submit",function(){displayCandidates(getCachedData())});
+
+    else $("#zipSearch").on("submit",getElectionData);
     var zip;
     if(zip=localStorage.getItem("userZip")){
         $("#zipcode").val(zip);
-        getElectionData();
+        if(_USE_CACHED_DATA) displayCandidates(getCachedData());
+        else getElectionData();
     }
 }
-
-
-
 // API Call, calls displayHouseAndSenate() on success
 // This returns the names of everyone running for House and Senate
 // in the state
@@ -35,11 +40,11 @@ function getElectionData(e){
         }
     }    
     $.ajax(settings).done(function (response) {
-        displaCandidates(response);
+        displayCandidates(response);
     });
 }
 
-function displaCandidates(response){
+function displayCandidates(response){
     var offices=[];
 
     //responseNodes=response.lastChild.childNodes;
@@ -53,8 +58,9 @@ function displaCandidates(response){
         var name=candidate.ballotName;
         var party=candidate.electionParties;
         var status=candidate.electionStatus; 
+        var candidateId=candidate.candidateId;
         if(status==="Won"){
-            var newC=$("<p>").html(`<span class='candidate-name'>${name}</span>, <span class='candidate-party'>${party}`);           
+            var newC=$("<p>").html(`<span class='candidate-name' id="${candidateId}">${name}</span>, <span class='candidate-party'>${party}`);           
             if(offices.indexOf(officeId)===-1) {
                 offices.push(officeId);
                 //<li class="tabs-title is-active"><a href="#senate-data" aria-selected="true">Senate</a></li>
@@ -74,14 +80,43 @@ function displaCandidates(response){
     }
     
      
-    $(document).on("click",".candidate-name",loadBio);  
+    $(document).on("click",".candidate-name",getBio);  
     // Finally, we let foundation run its magic. This builds the accordion menus, among other things.
     $(document).foundation();
 }
-function loadBio(e){
-    console.log(this);
-    var bioBox=$("<div>").addClass("bioBox");
+function getBio(){
+    candidateId=this.id;
+    var APIKey="300d63e029ac499128ea14f5a11dfdca";
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://cors-anywhere.herokuapp.com/api.votesmart.org/CandidateBio.getBio?o=JSON&candidateId="+candidateId+"&key="+APIKey,
+        "method": "GET",
+        "headers": {
+        }
+    }    
+    $.ajax(settings).done(function (response) {
+        displayBio(response);
+    });
+}
 
+function displayBio(response){
+    console.log(response);
+    _rep=response;
+    var c=response.bio.candidate;
+    var first=c.firstName;
+    var nick;
+    if(c.nickName)nick='("'+c.nickName+'")';
+    else nick="";
+    var last=c.lastName;
+    var suffix=c.suffix;
+    var birth=c.birthDate;
+    var photo=c.photo;
+    console.log(photo);
+    var bioBox=$("<div>").addClass("bio-box");
+    var bodyText=`<p><strong>${first} ${nick} ${last} ${suffix}</strong></p><p><img src="${photo}" class="bio-pic">`;
+    var modalHTML=`<div class="bio-modal"><div class="bio-modal-header"><span class="bio-modal-exit">X</span><div class="bio-modal-body">${bodyText}</div></div></div>`;
     bioBox.html(modalHTML);
     $("body").append(bioBox);
+    $(".bio-box").on("click",function(){$(".bio-box").remove();})
 }
