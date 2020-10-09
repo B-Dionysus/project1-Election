@@ -9,14 +9,39 @@
     width: fit-content;
 
 } */
+
+#zipcode{
+    padding: 9px;
+  }
+.small-search{
+    width: 30% !important;
+}
+
+
+.input-group-rounded .input-group-field {
+    border-radius: 5000px 0 0 5000px;
+    padding-left: 1rem;
+  }
+  
+  .input-group-rounded .input-group-button .button {
+    border-radius: 0 5000px 5000px 0;
+    font-size: 0.8rem;
+  }
+  
+  
 .search-label{
     color:white;
 }
 .incumbent{
     font-weight: bold;
 }
+#zip-submit{
+background-color: #52669f;
+}
+
 /* #president{
 
+    
     border: 1px solid gainsboro;
 } */
 .bio-box{

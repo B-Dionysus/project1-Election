@@ -33,14 +33,23 @@
     <!-- Hero Section -->
     <section class="hero subpage">
       <header class="wrap hero hero-search-filter">
-        <div class="hero-search-filter-content wrap">
+        <div class="hero-search-filter-content wrap small-search">
           <h1 class= "hero-header">Candidates</h1>
-          <form id="zipSearch">
+            <form id="zipSearch" class="input-group input-group-rounded">
+              <br>
+              <input id="zipcode" class="input-group-field" placeholder="Search Candidates by Zip Code" type="search">
+              <div class="input-group-button">
+              <input id="zip-submit" type="submit" class="button secondary" value="Search">
+              </div>
+            </form>
+          </div>       
+             
+          <!-- <form id="zipSearch" class="small-search">
             <fieldset>
-              <label for="state" class="search-label">Search Candidates by ZipCode</label>
-               <input id="zipcode"><button class="search-label" type="submit">Search</button>
+              <label for="state" class="search-label">Search Candidates by Zip Code</label>
+               <input id="zipcode"><button class="button" type="submit" id="zip-submit">Submit</button>
             </fieldset>
-          </form>
+          </form> -->
       </header>
     </section>
 <!-- MAIN SECTION:-->

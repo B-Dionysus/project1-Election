@@ -17,18 +17,19 @@ body * {
   font-weight:bold;
 }
 
-.button{
-  .button {
-    background-color: rgb(238, 247, 239);
-    border: none;
+#submitAddress {
+    background-color: #52669f;
+    /* border: none;
     color: white;
     padding: 11px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-  }
+    font-size: 16px; */
+
 }
+
+
 
 /* Search/Hero */
 .hero-header {
