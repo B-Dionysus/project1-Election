@@ -45,14 +45,29 @@
     </section>
 <!-- MAIN SECTION:-->
 <section class="main">
-    <div class="container candidatescont">
+    <!-- <div class="container candidatescont"> -->
 <!-- nav tabs for candidate container  -->
-<ul class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="candidates-tabs">
-</ul>
+<!-- <ul class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="candidates-tabs">
+</ul> -->
 <!-- content for canditate container -->
-<div class="tabs-content" data-tabs-content="candidates-tabs" id="candidate-content">
-
-</div>
+<!-- <div class="tabs-content" data-tabs-content="candidates-tabs" id="candidate-content"> -->
+    <!-- new tab -->
+    <div class="grid-container candidatescont">
+      <div class="grid-x">
+        <div class="cell medium-3">
+          <ul class="vertical tabs" data-tabs id="candidates-tabs">
+          </ul>
+        </div>
+        <div class="cell medium-9">
+          <div class="tabs-content vertical" data-tabs-content="candidates-tabs" id="candidate-content">
+            <!-- this is where api pulls in -->
+            <div class="tabs-panel is-active"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- </div> -->
 </section>
 
 <!-- FOOTER -->
