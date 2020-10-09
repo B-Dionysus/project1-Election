@@ -19,7 +19,10 @@ function init(){
 // This returns the names of everyone running for House and Senate
 // in the state
 function getElectionData(e){
-    if(e) e.preventDefault();
+    // The Foundation tabs get very confused with mutliple calls
+    // so we actually *do* want to refresh this page
+    // if(e) e.preventDefault();
+    $("#candidate-content").html("<h3>Loading...</h3>");
     var zip=$("#zipcode").val();
     localStorage.setItem("userZip", zip);
     var APIKey="300d63e029ac499128ea14f5a11dfdca";
@@ -37,41 +40,38 @@ function getElectionData(e){
 }
 
 function displaCandidates(response){
-    $("#senate-data").html("");
-    $("#house-data").html("");
-    $("#pres-data").html("");
-    $("#state-house-data").html("");
-    $("#state-senate-data").html("");
+    var offices=[];
+
     //responseNodes=response.lastChild.childNodes;
     _rep=response;
+    $("#candidates-tabs").html("");
+    $("#candidate-content").html("");
     for(candidate of response.candidateList.candidate){
         var office=candidate.electionOffice;
+        const regex= / /gi;
+        var officeId=office.replace(regex,"-").replace("U.S.","US");
         var name=candidate.ballotName;
         var party=candidate.electionParties;
         var status=candidate.electionStatus; 
         if(status==="Won"){
-            var newC=$("<p>").html(`<span class='candidate-name'>${name}</span>, <span class='candidate-party'>${party}`);
-            switch(office.split(" ")[0]){
-                case "President":{
-                    $("#pres-data").append(newC);
-                    break;
-                }
-                case "U.S.":{
-                    if(office.split(" ")[1]==="Senate") $("#senate-data").append(newC);
-                    else if(office.split(" ")[1]==="House") $("#house-data").append(newC);
-                    break;
-                } 
-                case "State":{
-                    if(office.split(" ")[1]==="Senate") $("#state-senate-data").append(newC);
-                    else if(office.split(" ")[1]==="House") $("#state-house-data").append(newC);
-                    break;
-                }
-                default:{
-                    console.log(office);
-                    break;
-                }
-                    
-            }              
+            var newC=$("<p>").html(`<span class='candidate-name'>${name}</span>, <span class='candidate-party'>${party}`);           
+            if(offices.indexOf(officeId)===-1) {
+                offices.push(officeId);
+                //<li class="tabs-title is-active"><a href="#senate-data" aria-selected="true">Senate</a></li>
+                var newTab=$("<li>").addClass("tabs-title");
+                var newLink=$("<a>").text(office);
+                newLink.attr("href","#"+officeId);
+                newTab.append(newLink);
+                
+                $("#candidates-tabs").append(newTab);
+                //<div class="tabs-panel" id="pres-data">
+                var newDiv=$("<div>").addClass("tabs-panel");
+                newDiv.attr("id",officeId);
+                $("#candidate-content").append(newDiv);
+            }
+            $("#"+officeId).append(newC);
+        }              
     }
-    }
+    
+    $(document).foundation();
 }
