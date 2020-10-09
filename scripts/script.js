@@ -22,3 +22,12 @@ var x = setInterval(function() {
     document.getElementById("countdown").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+$("#submitAddress").click(function(e){
+  e.preventDefault();
+  //get user address from input field.
+  var userAddress = $("#findtext").val().trim();
+
+  localStorage.setItem("userAddress", userAddress);
+  window.location.href = "./findmypollingplace.html";
+});
