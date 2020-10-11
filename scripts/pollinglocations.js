@@ -11,14 +11,12 @@ $(document).ready(function(){
         $("#earlypolling").empty();
         //call to API
         
-        console.log("Testing 1...");
         $.ajax({
             url: "https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?electionId=7000&address=" + userAddress + "&key=AIzaSyDDcoCWMnPNLsXimjEmRL85TOfhM9yPsA8",
             method: "GET",
         }).then(function(response) {
             //logic to check if API returns targeted info
             //if yes then print infor on page
-            console.log("Testing 2...");
             if(response.hasOwnProperty("pollingLocations")=== true){
 
                 //create div to hold info
@@ -33,12 +31,12 @@ $(document).ready(function(){
                 var pollAddressState = response.pollingLocations[0].address.state
                 var pollAddress =  pollAddressLine1 + " " + pollAddressCity + ", " + pollAddressState;
                 var address = $($("<p>").text("Address: ").attr("class", "poll-address"));
-                console.log(pollAddressCity)
+                
                 address.append($("<span>").text(pollAddress).attr("class", "span"));
                 address.attr("class", "address-name");
 
-                var hours = $("<p>").text("Hours: ").attr("class", "poll-hours"); 
-                hours.append("<span>").text(response.pollingLocations[0].pollingHours).attr("class", "span");
+                var hours = $($("<p>").text("Hours: ").attr("class", "poll-hours")); 
+                hours.append($("<span>").text(response.pollingLocations[0].pollingHours).attr("class", "span"));
 
                 var directions = $("<button>").text("Find Directions");
                 directions.attr("class", "button-name");
