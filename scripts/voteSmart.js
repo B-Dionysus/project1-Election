@@ -1,12 +1,12 @@
+// Currently we are using live data from VoteSmart, but our API key
+// expires on November 9th. In order to demo the page, flip the following 
+// variable to TRUE and it will pull from cachedData.js instead of from their
+// API
 var _USE_CACHED_DATA=false;
-
 $(document).ready(init);
 
-
-var _rep;
-// How is this documentation? I couldn't find the slightest guide to how to specify JSON as opposed to
-// XML anywhere on their site (although they helpfully included a link to wikipedia's JSON article!!!!!)
-//I finally found the answer in a random forum post here:
+// I had difficulty finding the option to request that VoteSmart return its data
+// in JSON format. I finally tracked it down via the following url:
 // https://www.webdeveloper.com/d/217846-trying-to-access-project-votesmart-api/5
 function init(){
     if(_USE_CACHED_DATA)    
@@ -14,6 +14,8 @@ function init(){
 
     else $("#zipSearch").on("submit",getElectionData);
     var zip;
+    // If it's in local storage, assign the user's zip to var zip and call displayCandidates();
+    // If not, don't do anything until the user submits the zipcode search form
     if(zip=localStorage.getItem("userZip")){
         $("#zipcode").val(zip);
         if(_USE_CACHED_DATA) displayCandidates(getCachedData());
@@ -21,8 +23,8 @@ function init(){
     }
 }
 // API Call, calls displayHouseAndSenate() on success
-// This returns the names of everyone running for House and Senate
-// in the state
+// This returns the names of everyone running for state and
+// federal level positions in the user's zipcode
 function getElectionData(e){
     // The Foundation tabs get very confused with mutliple calls
     // so we actually *do* want to refresh this page
@@ -45,25 +47,29 @@ function getElectionData(e){
 }
 
 function displayCandidates(response){
+    // The name and number of offices in each zip code varies (check out my home town, 27510
+    // for a ballot with a whole bunch of contests on it!). So we'll need to construct our UI
+    // dynamically
     var offices=[];
-
-    //responseNodes=response.lastChild.childNodes;
-    _rep=response;
     $("#candidates-tabs").html("");
     $("#candidate-content").html("");
     for(candidate of response.candidateList.candidate){
         var office=candidate.electionOffice;
+        // User this regex to replace the " " character globally, and case insensitively (not
+        // that the case matters for this) throughout thr string.
         const regex= / /gi;
+        // We are replacing it with "-" to make it work as a css id
         var officeId=office.replace(regex,"-").replace("U.S.","US");
         var name=candidate.ballotName;
         var party=candidate.electionParties;
         var status=candidate.electionStatus; 
         var candidateId=candidate.candidateId;
+        // Only display the candidates who have already run their primary race.
+        // Other options include "Running" and "Lost"
         if(status==="Won"){
             var newC=$("<p>").html(`<span class='candidate-name' id="${candidateId}">${name}</span>, <span class='candidate-party'>${party}`);           
             if(offices.indexOf(officeId)===-1) {
                 offices.push(officeId);
-                //<li class="tabs-title is-active"><a href="#senate-data" aria-selected="true">Senate</a></li>
                 var newTab=$("<li>").addClass("tabs-title");
                 var newLink=$("<a>").text(office);
                 newLink.attr("href","#"+officeId);
@@ -79,7 +85,7 @@ function displayCandidates(response){
         }              
     }
     
-     
+    // If the user clicks on a cnadidate, their photo and full name pop up in a modal. 
     $(document).on("click",".candidate-name",getBio);  
     // Finally, we let foundation run its magic. This builds the accordion menus, among other things.
     $(document).foundation();
@@ -99,7 +105,9 @@ function getBio(){
         displayBio(response);
     });
 }
-
+// This gets the full name of the candidate, including any nicknames
+// and suffixes (e.g., Joseph "Joe" Biden Jr.) as well as a small photo
+// And puts it in a modal pop up
 function displayBio(response){
     console.log(response);
     _rep=response;
