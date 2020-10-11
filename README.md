@@ -12,5 +12,5 @@ Do you know where your voting, and do you know who’s on the ballot? We underst
 As a first time and/or inexperienced voter, I want a site that gives me all the voting information I need. Such as my polling locations, ballot information, and how to register to vote. 
 
 ![Screenshot](Assets/home-page.png)
-
+  
 
