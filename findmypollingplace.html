@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/foundation.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pollingplace.css">
   </head>
 
   <body>
@@ -34,19 +35,19 @@
           <form class="hero-search-filter-form" action="">
             <!-- <label for="findtext">Address</label> -->
             <input id="findtext" class="hero-search-filter-form-find" type="text" placeholder="123 Main Street City, State"/>
-            <button class="button" id ="submitAddress">SEARCH</button>
+            <button class="button" id ="submit-address">SEARCH</button>
           </form>
         </div>
       </header>
     </section>
   
 <!-- MAIN SECTION:-->
-<h4>Your Polling Location:</h4>
+<h4 id="poll-location">Please enter an address in the search bar above.</h4>
 <div class="container wrap" >
   <div class="callout small" id = "userpolling">
   </div>
 </div>
-<h4>Early Voting Locations:</h4>
+<h4 id="early-voting"></h4>
 <div class="container wrap" >
   <div class="callout small" id = "earlypolling">
   </div>

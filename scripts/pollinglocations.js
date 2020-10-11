@@ -1,6 +1,6 @@
 $(document).ready(function(){
     //get stored address
-    localStorage.getItem("userAddress");
+   // localStorage.getItem("userAddress");
     //push address info on the page
     pushInfo(localStorage.getItem("userAddress")); 
 
@@ -10,12 +10,15 @@ $(document).ready(function(){
         $("#userpolling").empty();
         $("#earlypolling").empty();
         //call to API
+        
+        console.log("Testing 1...");
         $.ajax({
             url: "https://civicinfo.googleapis.com/civicinfo/v2/voterinfo?electionId=7000&address=" + userAddress + "&key=AIzaSyDDcoCWMnPNLsXimjEmRL85TOfhM9yPsA8",
             method: "GET",
         }).then(function(response) {
             //logic to check if API returns targeted info
             //if yes then print infor on page
+            console.log("Testing 2...");
             if(response.hasOwnProperty("pollingLocations")=== true){
 
                 //create div to hold info
@@ -49,7 +52,12 @@ $(document).ready(function(){
                 newDiv.append(directions);
 
                 // apend div with all info to html
+                $("#poll-location").text("Your Polling Location:");
+                $("#early-voting").text("Early Voting Locations:");
                 $("#userpolling").append(newDiv);
+                $("#userpolling").css("display","block");
+                $("#earlypolling").css("display","block");
+                
             
                 // Store user zipcode in localStorage
                 localStorage.setItem("userZip",response.normalizedInput.zip);
@@ -105,15 +113,16 @@ $(document).ready(function(){
             }
             //if API response does not have targeted info then let user know
             else{
-                var newDiv = $("<div>").text("No polling information found for this location.").attr("class", "noInfo")
-                var otherDiv = $("<div>").text("No polling information found for this location.").attr("class", "noInfo")
-                $("#earlypolling").append(newDiv);
-                $("#userpolling").append(otherDiv);
+                // var newDiv = $("<div>").text("No polling information found for this location.").attr("class", "noInfo")
+                // var otherDiv = $("<div>").text("No polling information found for this location.").attr("class", "noInfo")
+                // $("#earlypolling").append(newDiv);
+                // $("#userpolling").append(otherDiv);
+                $("#userpolling").text("No polling information found for this location.");
             }
         }); 
     }
     //create a click event for submitting address on pollingpage
-    $("#submitAddress").click(function(e){
+    $("#submit-address").click(function(e){
         e.preventDefault();
         //get text from input field
         var userAddress = $("#findtext").val().trim();
