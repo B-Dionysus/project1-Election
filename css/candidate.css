@@ -44,6 +44,10 @@ background-color: #52669f;
     
     border: 1px solid gainsboro;
 } */
+.candidate-name{
+    color:#52669f;
+    font-weight: bold;
+}
 .bio-box{
     position: absolute;
     top: 210px;
