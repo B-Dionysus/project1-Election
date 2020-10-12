@@ -111,10 +111,7 @@ $(document).ready(function(){
             }
             //if API response does not have targeted info then let user know
             else{
-                // var newDiv = $("<div>").text("No polling information found for this location.").attr("class", "noInfo")
-                // var otherDiv = $("<div>").text("No polling information found for this location.").attr("class", "noInfo")
-                // $("#earlypolling").append(newDiv);
-                // $("#userpolling").append(otherDiv);
+              
                 $("#userpolling").text("No polling information found for this location.");
             }
         }); 
