@@ -50,8 +50,8 @@ $(document).ready(function(){
                 newDiv.append(directions);
 
                 // apend div with all info to html
-                $("#poll-location").text("Your Polling Location:");
-                $("#early-voting").text("Early Voting Locations:");
+                $("#poll-location").html("<h4>Your Polling Location:</h4>");
+                $("#early-voting").html("<h4>Early Voting Locations:</h4>");
                 $("#userpolling").append(newDiv);
                 $("#userpolling").css("display","block");
                 $("#earlypolling").css("display","block");
@@ -111,10 +111,7 @@ $(document).ready(function(){
             }
             //if API response does not have targeted info then let user know
             else{
-                // var newDiv = $("<div>").text("No polling information found for this location.").attr("class", "noInfo")
-                // var otherDiv = $("<div>").text("No polling information found for this location.").attr("class", "noInfo")
-                // $("#earlypolling").append(newDiv);
-                // $("#userpolling").append(otherDiv);
+              
                 $("#userpolling").text("No polling information found for this location.");
             }
         }); 

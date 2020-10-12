@@ -1,7 +1,20 @@
 #userpolling{
     display:none;
+    text-align: center;
 }
 
 #earlypolling{
     display:none;s
+}
+
+#submit-address {
+    background-color: #52669f;
+}
+
+h4 {
+  text-align: center; 
+}
+
+.info-header{
+    padding-top: 30px;
 }
