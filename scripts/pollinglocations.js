@@ -50,8 +50,8 @@ $(document).ready(function(){
                 newDiv.append(directions);
 
                 // apend div with all info to html
-                $("#poll-location").html("<h3>Your Polling Location:<h3>");
-                $("#early-voting").html("<h3>Early Voting Locations:<h3>");
+                $("#poll-location").html("<h4>Your Polling Location:</h4>");
+                $("#early-voting").html("<h4>Early Voting Locations:</h4>");
                 $("#userpolling").append(newDiv);
                 $("#userpolling").css("display","block");
                 $("#earlypolling").css("display","block");
