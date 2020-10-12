@@ -32,16 +32,24 @@
     <!-- Hero Section -->
     <section class="hero heromainpage">
       <header class="wrap hero hero-search-filter">
-        <div class="hero-search-filter-content wrap">
+        <div class="hero-search-filter-content wrap main-search">
           <h1 class= "hero-header">Find My Polling Place</h1>
-          <form class="hero-search-filter-form" action="">
+          <div class="input-group input-group-rounded" action="">
             <!-- <label for="findtext">Address</label> -->
-            <input id="findtext" class="hero-search-filter-form-find" type="text" placeholder="123 Main Street City, State"/>
-            <button class="button" id ="submitAddress">SEARCH</button>
-          </form>
+            <input id="findtext" class="input-group-field" type="text" placeholder="123 Main Street City, State">
+            <div class="input-group-button">
+            <input id ="submitAddress" type="submit" class="button secondary" value="Search">
+            </div>
+          </div>
         </div>
       </header>
     </section>
+          
+          <form class="input-group input-group-rounded" action="">
+            <!-- <label for="findtext">Address</label> -->
+            <!-- <input id="findtext" class="input-group-field" type="text" placeholder="123 Main Street City, State"/>
+            <button class="button" id ="submitAddress">SEARCH</button> -->
+
   
 <!-- MAIN SECTION:-->
 <div class= "container wrap">
@@ -49,12 +57,8 @@
     <div class="column">
       <div class="callout mainpagecallout">
         <h2 class="lead mainpageh2">Voting Resources</h2>
-        <p><img src="./Assets/Voting.png" alt="icon image of a voting slip"></p>
-        <p class="subheader">Check out this list of resources for voter registration, or use our tool to register to vote straight from our website powered by Rock The Vote.</p>
-        <div style="text-align:center;">
-          <br><br>
-          <a class="button secondary" href="./registertovote.html">View Resources</a>
-        </div>
+        <a href="./registertovote.html"><img src="./Assets/Voting.png" alt="icon image of a voting slip"></a>
+        <p class="subheader">Check out this list of resources for voter registration, or use our tool to register to vote straight from our website powered by Rock The Vote. <a href="./registertovote.html">Click here </a>to check out these features!</p>
       </div>
     </div>
     <div class="column">
@@ -65,8 +69,7 @@
         <h3 class="lead election">days until the election</h3>
         <div style="text-align:center;">
           <br>
-          <!-- <a class="button secondary" href="">Add to Calendar</a> -->
-          <!-- https://www.addevent.com/add-to-calendar-button -->
+          <!--Resource: https://www.addevent.com/add-to-calendar-button -->
           <div title="Add to Calendar" class="addeventatc">
             Add to Calendar
             <span class="start">11/03/2020 12:00 AM</span>
@@ -81,16 +84,8 @@
     <div class="column">
       <div class="callout mainpagecallout">
         <h2 class="lead mainpageh2">Who's On Your Ballot?</h2>
-        <p><img src="./Assets/Candidate.png" alt="icon image of election candidates"></p>
-        <p class="subheader">Find out what candidates are on your ballot.</p>
-        <div style="text-align:center;">
-          <br>
-          <br>
-          <br>
-          <br>
-          <a class="button secondary" href="./candidates.html">View Candidates</a>
-          
-        </div>
+        <a href="./candidates.html"><img src="./Assets/Candidate.png" alt="icon image of election candidates"></a>
+        <p class="subheader">Find out what candidates are on your ballot. <a href="./candidates.html">Click here </a> to search! You can choose by state, and find a list of all of the candidates that will appear on your ballot. </p>
       </div>
     </div>
   </div>
