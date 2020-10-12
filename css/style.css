@@ -10,12 +10,11 @@ body * {
 
 }
 /* Nav */
-/* .nav-links{
-  
+a {
+  color: #52669f;
+}
+
 /* Search Bar */
-/* #findtext{
-  padding: 9px;
-} */
 .main-search{
   width: 50% !important;
 }
