@@ -17,9 +17,12 @@ h4 {
     padding-top: 30px;
 }
 
-/* Early Polling Section */
 #earlypolling{
     display:none;
 }
 
-
+button:hover{
+    background-color: #52669f;
+    color: white;
+    padding: 5px;
+}
