@@ -1,5 +1,6 @@
 #userpolling{
     display:none;
+    text-align: center;
 }
 
 #earlypolling{
@@ -10,4 +11,10 @@
     background-color: #52669f;
 }
 
- 
+h3 {
+  text-align: center; 
+}
+
+.info-header{
+    padding-top: 20px;
+}

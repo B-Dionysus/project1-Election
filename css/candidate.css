@@ -1,22 +1,11 @@
-/* #senate{
-    border: 1px solid gainsboro;
-    width: fit-content;
-}
-
-#house{
-
-    border: 1px solid gainsboro;
-    width: fit-content;
-
-} */
-
+/* Search Bar */
 #zipcode{
     padding: 9px;
   }
+
 .small-search{
     width: 30% !important;
 }
-
 
 .input-group-rounded .input-group-field {
     border-radius: 5000px 0 0 5000px;
@@ -28,26 +17,28 @@
     font-size: 0.8rem;
   }
   
-  
 .search-label{
     color:white;
 }
+
+#zip-submit{
+    background-color: #52669f;
+    }
+
+/* Styling for Tabs/Candidates */
+.candidatescont {
+padding-top: 20px;
+}
+
 .incumbent{
     font-weight: bold;
 }
-#zip-submit{
-background-color: #52669f;
-}
 
-/* #president{
-
-    
-    border: 1px solid gainsboro;
-} */
 .candidate-name{
     color:#52669f;
     font-weight: bold;
 }
+
 .bio-box{
     position: absolute;
     top: 210px;
@@ -59,11 +50,13 @@ background-color: #52669f;
     background-color: ghostwhite;
     padding:5px;
 }
+
 .bio-modal-exit{
     font-weight: bold;
     float: right;
     margin-right: 5%;
 }
+
 .bio-modal-body{
     clear: both;
     text-align: center;
