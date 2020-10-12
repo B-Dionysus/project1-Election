@@ -21,6 +21,11 @@
   overflow: hidden;
 }
 
+/* .vote-container{
+  margin: 0 auto;
+  min-height: 100%;
+} */
+
 h3{
   text-align: center;
 }
@@ -54,9 +59,3 @@ h3{
   letter-spacing: 3px;
 }
 
-
-/* Rock the vote */
-.vote-container{
-  margin: 0 auto;
-  min-height: 100%;
-}

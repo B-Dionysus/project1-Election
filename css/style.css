@@ -9,13 +9,13 @@ body * {
   font-family: 'Poppins', sans-serif;
 
 }
+
 /* Nav */
-/* .nav-links{
-  
+a {
+  color: #52669f;
+}
+
 /* Search Bar */
-/* #findtext{
-  padding: 9px;
-} */
 .main-search{
   width: 50% !important;
 }
@@ -31,14 +31,11 @@ body * {
 
 }
 
-
 #submitAddress {
     background-color: #52669f;
     height: 39px;
 
 }
-
-
 
 /* Search/Hero */
 .hero-header {
@@ -191,25 +188,7 @@ body * {
   text-align: center;
 
 }
-
-
-
-/* Main */
 .incumbent{
   font-weight:bold;
 }
 
-/* add to calendar button */
-/* 
-.electionbutton{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
- */
-
-
-/* Footer */
