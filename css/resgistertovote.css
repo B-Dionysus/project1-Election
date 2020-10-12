@@ -11,31 +11,9 @@
   padding: 10px 0;
 }
 
-/* Rock the Vote */
-.rockthevotecont{
-  align-content: center;
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 35px;
-  height: 0;
-  overflow: hidden;
-}
-
-/* .vote-container{
-  margin: 0 auto;
-  min-height: 100%;
-} */
-
-h3{
-  text-align: center;
-}
-
-.rockthevoteiframe{ 
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+/* Button */
+#reg-to-vote-btn {
+  background-color: #52669f;
 }
 
 /* Subpage Hero */
