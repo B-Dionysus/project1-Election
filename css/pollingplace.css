@@ -5,3 +5,11 @@
 #earlypolling{
     display:none;s
 }
+
+#submit-address {
+    background-color: #52669f;
+}
+
+.poll-location{
+    text-align: center;
+}

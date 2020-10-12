@@ -30,19 +30,21 @@
     <!-- Hero Section -->
     <section class="hero subpage">
       <header class="wrap hero hero-search-filter">
-        <div class="hero-search-filter-content wrap">
+        <div class="hero-search-filter-content wrap main-search">
           <h1 class= "hero-header">Find My Polling Place</h1>
-          <form class="hero-search-filter-form" action="">
+          <div class="input-group input-group-rounded" action="">
             <!-- <label for="findtext">Address</label> -->
-            <input id="findtext" class="hero-search-filter-form-find" type="text" placeholder="123 Main Street City, State"/>
-            <button class="button" id ="submit-address">SEARCH</button>
-          </form>
+            <input id="findtext" class="input-group-field" type="text" placeholder="123 Main Street City, State">
+            <div class="input-group-button">
+            <input id ="submit-address" type="submit" class="button secondary" value="Search">
+            </div>
+          </div>
         </div>
       </header>
     </section>
   
 <!-- MAIN SECTION:-->
-<h4 id="poll-location">Please enter an address in the search bar above.</h4>
+<h4 class= "info-header" id="poll-location">Please enter an address in the search bar above.</h4>
 <div class="container wrap" >
   <div class="callout small" id = "userpolling">
   </div>
